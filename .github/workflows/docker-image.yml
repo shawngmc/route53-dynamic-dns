@@ -76,7 +76,7 @@ jobs:
     # Login to DockerHub
     - name: Login to DockerHub
       uses: docker/login-action@v2
-      environment:
+      env:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
