@@ -47,6 +47,7 @@ jobs:
 
   docker:
     name: Build Docker Container
+    environment: Main
 
     # Run only if build completes successfully
     needs: build
