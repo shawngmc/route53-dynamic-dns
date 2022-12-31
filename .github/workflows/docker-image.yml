@@ -25,11 +25,11 @@ jobs:
     steps:
     # Checkout code
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       
     # Set version of node to use
     - name: Use Node.js 16
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
         node-version: '16'
     
@@ -57,7 +57,7 @@ jobs:
     steps:
     # Checkout code
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     # Set tag to release version tag if one is present (in format v.1.0.0)
     # otherwise consider this a dev build      
@@ -76,7 +76,7 @@ jobs:
     # Login to DockerHub
     - name: Login to DockerHub
       uses: docker/login-action@v2
-      with:
+      environment:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
